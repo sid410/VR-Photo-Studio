@@ -43,4 +43,4 @@ Details:
 		- [ ] Waving Mode
 			- [ ] The Character should Be in Idle mode while Looking at the player and Waving(Use an Ik Controller for this)
       
-- [ ] The experience should have a beginning and an end.
+- [x] The experience should have a beginning and an end.

@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00.Plugins/UnityChanSSU/Scenes/UnityChanSSU.unity
-    guid: afc1d993ccb5f47c5ac11fa6e6423a94
+    path: Assets/04.Scenes/S00_MainMenu.unity
+    guid: 69d1268809e5b4844a2a8fc83b084df3
+  - enabled: 1
+    path: Assets/04.Scenes/S01_PhotoStudio.unity
+    guid: f6196d08e6d1647419de700f45e162aa
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2ed9c42abd4eb48429d29eb8b3d9140f,
       type: 2}
