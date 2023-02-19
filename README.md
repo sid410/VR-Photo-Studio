@@ -19,8 +19,8 @@ The system should, as a minimum:
 
 Details:
 - [ ] The camera system should Implement The Following Concepts
-	- [ ] A Shutter To take a Picture
-	- [ ] A display To Previzualize the Photo
+	- [x] A Shutter To take a Picture
+	- [x] A display To Previzualize the Photo
 	- [ ] A Zoom Function
 	- [ ] A Save Function(photos should be saved on a Persistent file on the user's PC)
 	- [ ] A Gallery Function (Photos taken on previous sessions should be loaded upon startup)
