@@ -2508,7 +2508,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1226387935
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2907,6 +2907,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1748153572}
+  - component: {fileID: 1748153573}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -2930,6 +2931,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1748153573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1748153571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15024195eed2a284b871204d7b616a2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Show Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 84f59a09-63a1-4018-8776-f957458f5d67
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 6029660514991395850, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  headCam: {fileID: 1687258585}
+  spawnDistance: 1.5
+  canvas: {fileID: 1226387934}
 --- !u!1 &1783991741
 GameObject:
   m_ObjectHideFlags: 0
