@@ -10,12 +10,9 @@ using UnityEngine;
 /// </remarks>
 public class FadeScreen : MonoBehaviour
 {
-    [SerializeField]
-    private bool fadeOnStart = true;
-    [SerializeField]
-    private Color fadeColor;
-    [SerializeField]
-    private float fadeDuration = 2.0f; // fading duration in seconds
+    [SerializeField] private bool fadeOnStart = true;
+    [SerializeField] private Color fadeColor;
+    [SerializeField] private float fadeDuration = 2.0f; // fading duration in seconds
     public float FadeDuration
     {
         get { return fadeDuration; }

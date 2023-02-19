@@ -8,18 +8,15 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class ToggleMenu : MonoBehaviour
 {
+    [SerializeField] private Transform headCam; // main camera of the XR rig
+    [SerializeField] private float spawnDistance = 1.5f; // spawn the menu 1.5m in front of user
+    [SerializeField] private GameObject canvas;
+
     /// <remarks>
     /// Set this to the Menu button, in case of Meta Quest 2 in the left hand
     /// </remarks>
     public InputActionProperty showButton;
 
-    [SerializeField]
-    private Transform headCam; // main camera of the XR rig
-    [SerializeField]
-    private float spawnDistance = 1.5f; // spawn the menu 1.5m in front of user
-    [SerializeField]
-    private GameObject canvas;
-    
     private void Update()
     {
         // toggle the menu on/off
