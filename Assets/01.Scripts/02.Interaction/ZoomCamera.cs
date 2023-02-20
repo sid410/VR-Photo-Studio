@@ -29,16 +29,16 @@ public class ZoomCamera : MonoBehaviour
     /// Only zoom if the 3D camera model is selected.
     /// Do not forget to trigger this in the event of XR Grab Interactable attached in camera model
     /// </remarks>
-    private bool isCamModelSelected = false;
-    public bool IsCamModelSelected
+    private bool camModelSelected = false;
+    public bool CamModelSelected
     {
-        set { isCamModelSelected = value; }
+        set { camModelSelected = value; }
     }
 
     private void FixedUpdate()
     {
         // skip the zoom functions if 3D model of cam is not selected
-        if (!isCamModelSelected)
+        if (!camModelSelected)
         {
             return;
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 /// <summary>
-/// Enable/Disable the far interaction w/ Ray when it is possible to do near interaction directly.
+/// Enable/Disable the far interaction with Ray when it is possible to do near interaction directly.
 /// </summary>
 public class ActivateGrabRay : MonoBehaviour
 {
