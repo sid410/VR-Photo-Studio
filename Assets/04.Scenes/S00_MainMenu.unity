@@ -4175,12 +4175,6 @@ PrefabInstance:
       propertyPath: flashScreen
       value: 
       objectReference: {fileID: 327195700}
-    - target: {fileID: 2311538568589401816, guid: 30ef320c916469c41b2964273305d924,
-        type: 3}
-      propertyPath: cameraSettingsValues
-      value: 
-      objectReference: {fileID: 11400000, guid: 7825e6bd616d6ce468c8da88ebfa5901,
-        type: 2}
     - target: {fileID: 2856167386260591859, guid: 30ef320c916469c41b2964273305d924,
         type: 3}
       propertyPath: m_Name
