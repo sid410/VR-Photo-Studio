@@ -1129,7 +1129,6 @@ MonoBehaviour:
     m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   camRay: {fileID: 2311538567644995348}
-  camShutter: {fileID: 813663924729016303}
   teleportAnchorPrefab: {fileID: 5339389713379088849, guid: 2953c3d8aeec7b3458defc4e14a2939b,
     type: 3}
   flashScreen: {fileID: 0}

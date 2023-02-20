@@ -203,7 +203,7 @@ GameObject:
   - component: {fileID: 5339389713379088848}
   - component: {fileID: 890369526}
   m_Layer: 0
-  m_Name: TeleportAnchor
+  m_Name: PF_TeleportAnchor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
