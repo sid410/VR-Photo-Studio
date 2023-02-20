@@ -15,9 +15,10 @@ public class FlashScreen : MonoBehaviour
     [SerializeField] private float flashDurationIn = 0.05f; // flashing duration in seconds from transparent to opaque
     [SerializeField] private float flashDurationOut = 0.45f; // flashing duration in seconds from opaque to transparent
 
-    public float FlashDuration
+    private bool isFlashing = false;
+    public bool IsFlashing
     {
-        get { return flashDurationIn + flashDurationOut; }
+        get { return isFlashing; }
     }
 
     private Renderer rend;
@@ -32,7 +33,13 @@ public class FlashScreen : MonoBehaviour
     /// </summary>
     public void Flash()
     {
+        /// <remarks>
+        /// Only on the off chance that this function is called while still doing the flashing Flash animation,
+        /// we force stop the current flash animation.
+        /// </remarks>
         StopAllCoroutines();
+
+        isFlashing = true;
         StartCoroutine(FlashRoutine());
     }
 
@@ -43,6 +50,7 @@ public class FlashScreen : MonoBehaviour
     {
         yield return ChangeAlphaRoutine(0, 1, flashDurationIn);
         yield return ChangeAlphaRoutine(1, 0, flashDurationOut);
+        yield return FinishFlashing();
     }
 
     /// <summary>
@@ -69,5 +77,12 @@ public class FlashScreen : MonoBehaviour
         Color newColorFinal = flashColor;
         newColorFinal.a = alphaOut;
         rend.material.SetColor("_BaseColor", newColorFinal);
+    }
+
+    // add here later other stuff to do when finished flashing
+    private IEnumerator FinishFlashing()
+    {
+        isFlashing = false;
+        yield return null;
     }
 }

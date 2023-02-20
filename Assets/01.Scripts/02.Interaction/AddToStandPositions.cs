@@ -15,7 +15,6 @@ public class AddToStandPositions : MonoBehaviour
     [SerializeField] private InputActionProperty placeButton;
 
     [SerializeField] private GameObject camRay;
-    [SerializeField] private GameObject camShutter;
     [SerializeField] private GameObject teleportAnchorPrefab; // the prefab to spawn and where to teleport during real game time
     [SerializeField] private FlashScreen flashScreen; // the flash FX used when taking photos
 

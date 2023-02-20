@@ -7681,8 +7681,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AddToStandPositions, Assembly-CSharp
+      - m_Target: {fileID: 7828235255894319787}
+        m_TargetAssemblyTypeName: CycleStandPositions, Assembly-CSharp
         m_MethodName: set_CamModelSelected
         m_Mode: 6
         m_Arguments:
@@ -7708,8 +7708,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AddToStandPositions, Assembly-CSharp
+      - m_Target: {fileID: 7828235255894319787}
+        m_TargetAssemblyTypeName: CycleStandPositions, Assembly-CSharp
         m_MethodName: set_CamModelSelected
         m_Mode: 6
         m_Arguments:
@@ -7845,6 +7845,7 @@ GameObject:
   - component: {fileID: 1294922067061905565}
   - component: {fileID: 1294922067061905567}
   - component: {fileID: 2311538567909761188}
+  - component: {fileID: 7828235255894319787}
   m_Layer: 7
   m_Name: PF_PhotoStudio_CameraModel
   m_TagString: Untagged
@@ -7902,6 +7903,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2856167385312586383}
   m_Mesh: {fileID: 7807538432633192378, guid: b903b5428b5ec884fabfe94fabbdf5c3, type: 3}
+--- !u!114 &7828235255894319787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2856167385312586383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257aa463f94b0354391547515e429536, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Place Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: a05cebcb-bcdf-4b10-a754-d9816b9019ac
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  playerOrigin: {fileID: 1412496977}
+  idolTarget: {fileID: 1834880796}
+  sceneTransition: {fileID: 1670493274}
+  flashScreen: {fileID: 327195700}
+  cameraSettingsValues: {fileID: 11400000, guid: 7825e6bd616d6ce468c8da88ebfa5901,
+    type: 2}
 --- !u!4 &8847659312035622114
 Transform:
   m_ObjectHideFlags: 0

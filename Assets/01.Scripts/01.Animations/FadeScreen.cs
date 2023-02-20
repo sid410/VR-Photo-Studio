@@ -52,7 +52,6 @@ public class FadeScreen : MonoBehaviour
     /// <param name="alphaOut">Ending alpha value from 0->1 </param>
     public void Fade(float alphaIn, float alphaOut)
     {
-        StopAllCoroutines();
         StartCoroutine(FadeRoutine(alphaIn, alphaOut));
     }
 

@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6523b4c9b27de9742a61c9b26117d4ce, type: 3}
   m_Name: CameraSettings
   m_EditorClassIdentifier: 
-  camZoom: 0
+  camZoom: 60
   maxPhotos: 5
-  standPositions: []
+  standPositions:
+  - {x: 2.7885294, y: -5.9296376e-17, z: 2.6704712}
+  - {x: 0.18634616, y: -6.097243e-17, z: 2.745954}
+  - {x: -3.1183393, y: -7.803274e-17, z: 3.514282}
