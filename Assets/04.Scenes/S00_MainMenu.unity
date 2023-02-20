@@ -1043,10 +1043,100 @@ PrefabInstance:
       propertyPath: m_Name
       value: PF_CameraModel
       objectReference: {fileID: 0}
+    - target: {fileID: 3125088108952126996, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125088108952126998, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.00039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3125088108952126998, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1531942414}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1531942414}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_IsCamModelSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_IsCamModelSelected
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ZoomCamera, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ZoomCamera, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectExited.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597321493239746341, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+        type: 3}
+      propertyPath: m_SelectEntered.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3597321493239746342, guid: 1b103c46cab9a884eb008cd253ac1d0b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3597321493239746342, guid: 1b103c46cab9a884eb008cd253ac1d0b,
         type: 3}
@@ -1129,7 +1219,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327195695
 GameObject:
@@ -1813,7 +1903,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &653260035
 GameObject:
@@ -3213,6 +3303,67 @@ MonoBehaviour:
   rightGrabRay: {fileID: 130486173}
   leftDirectGrab: {fileID: 56085096}
   rightDirectGrab: {fileID: 2124334174}
+--- !u!1 &1531942413
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531942415}
+  - component: {fileID: 1531942414}
+  m_Layer: 0
+  m_Name: CameraManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1531942414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531942413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6997e20ebed73e47bcb69d1efd9534e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomButton:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Zoom Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 3fbac8cd-6a1b-4f1f-a432-ccc4aecad6dc
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f,
+      type: 3}
+  camObject: {fileID: 1832033868}
+  maxFOV: 60
+  minFOV: 20
+  zoomSteps: 1
+--- !u!4 &1531942415
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531942413}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1641520097
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,7 +3711,7 @@ Transform:
   m_Children:
   - {fileID: 1226387935}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1748153573
 MonoBehaviour:
@@ -3636,6 +3787,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
+--- !u!20 &1832033868 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3125088108952126996, guid: 1b103c46cab9a884eb008cd253ac1d0b,
+    type: 3}
+  m_PrefabInstance: {fileID: 257522160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2124334170
 GameObject:
   m_ObjectHideFlags: 0
