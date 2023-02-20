@@ -142,10 +142,10 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5339389713379088849}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 890369526}
+        m_TargetAssemblyTypeName: RemoveFromStandPositions, Assembly-CSharp
+        m_MethodName: RemoveTeleportAnchor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -201,6 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5339389713379088848}
+  - component: {fileID: 890369526}
   m_Layer: 0
   m_Name: TeleportAnchor
   m_TagString: Untagged
@@ -224,6 +225,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &890369526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5339389713379088849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a4bda9808fd3f45b26f4e741a39c80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSettingsValues: {fileID: 11400000, guid: 7825e6bd616d6ce468c8da88ebfa5901,
+    type: 2}
 --- !u!1 &5339389713417434847
 GameObject:
   m_ObjectHideFlags: 0

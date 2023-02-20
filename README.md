@@ -26,13 +26,13 @@ Details:
 	- [ ] A Gallery Function (Photos taken on previous sessions should be loaded upon startup)
 	- [ ] A limit of Photos Per Session
 		- [ ] After Exceeding the Limit, there should be a fade out to the main Menu
-	- [ ] The Camera Settings(Zoom, Photos per session, Saved Data Location, etc.) should be Editable via Scriptable Objects.
+	- [x] The Camera Settings(Zoom, Photos per session, Saved Data Location, etc.) should be Editable via Scriptable Objects.
   
 - [ ] The Locomotion system should work in the following manner.
-	- [ ] You should only have Specific Points on the map where you can move.
-	- [ ] To move to any of these points, you should Take a Picture of the Position you want to move.
+	- [x] You should only have Specific Points on the map where you can move.
+	- [x] To move to any of these points, you should Take a Picture of the Position you want to move.
 	- [ ] After Taking the photo, the player should be teleported to the next position but oriented toward the Idol.
-	- [ ] The system should be flexible enough for a designer to create new Points where the player could stand.
+	- [x] The system should be flexible enough for a designer to create new Points where the player could stand.
   
 - [ ] The VR Idol should have at least four different Animations(Timeline Controlled) + Waving and looking toward the player.
 	- [ ] Through the VR Menu should be able To select 1 out of 3 modes

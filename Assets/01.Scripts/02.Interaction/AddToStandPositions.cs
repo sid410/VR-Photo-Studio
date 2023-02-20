@@ -5,7 +5,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// The script for adding where to stand during the locomotion system at game time
+/// The script for adding where to stand during the locomotion system at game time.
 /// </summary>
 public class AddToStandPositions : MonoBehaviour
 {
@@ -24,6 +24,9 @@ public class AddToStandPositions : MonoBehaviour
     // to store where the ray and object intersect
     private Vector3 hitPosition = Vector3.zero;
 
+    // the ScriptableObject to pass all the data to regarding number of photos and where to stand
+    [SerializeField] private CameraSettings cameraSettingsValues;
+
     /// <remarks>
     /// Only show the camera ray when both grip and activate button are pressed.
     /// Do not forget to trigger this in the event of XR Grab Interactable attached in camera model
@@ -36,6 +39,7 @@ public class AddToStandPositions : MonoBehaviour
 
     private void Start()
     {
+        // initialize the interactor and ray visualization
         camRayInteractor = camRay.GetComponent<XRRayInteractor>();
         lineVisual = camRay.GetComponent<XRInteractorLineVisual>();
     }
@@ -67,11 +71,12 @@ public class AddToStandPositions : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Spawn a Teleport anchor to the hit position of the ray to the ground on release.
     /// </summary>
-    /// <param name="position"></param>
+    /// <param name="position">the hit position between ray and ground</param>
     private void SpawnTeleportAnchor(Vector3 position)
     {
+        cameraSettingsValues.standPositions.Add(position);
         Instantiate(teleportAnchorPrefab, position, Quaternion.identity);
     }
 }

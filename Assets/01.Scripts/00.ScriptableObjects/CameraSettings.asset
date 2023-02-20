@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: CameraSettings
   m_EditorClassIdentifier: 
   camZoom: 0
-  maxPhotos: 0
+  maxPhotos: 5
   standPositions: []

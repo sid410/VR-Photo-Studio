@@ -7,5 +7,6 @@ public class CameraSettings : ScriptableObject
 {
     public float camZoom;
     public int maxPhotos;
-    public Vector3[] standPositions;
+
+    [SerializeField] public List<Vector3> standPositions;
 }
