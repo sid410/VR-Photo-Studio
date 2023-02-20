@@ -1074,6 +1074,7 @@ GameObject:
   - component: {fileID: 327195699}
   - component: {fileID: 327195698}
   - component: {fileID: 327195697}
+  - component: {fileID: 327195700}
   m_Layer: 0
   m_Name: ScreenFX
   m_TagString: Untagged
@@ -1161,6 +1162,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 327195695}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &327195700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327195695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ac2c4857561524faa57eeda3b6e002, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flashColor: {r: 1, g: 1, b: 1, a: 0}
+  flashDurationIn: 0.05
+  flashDurationOut: 0.45
 --- !u!1 &343681752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364,
@@ -4154,6 +4170,11 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1783991743}
+    - target: {fileID: 2311538568589401795, guid: 30ef320c916469c41b2964273305d924,
+        type: 3}
+      propertyPath: flashScreen
+      value: 
+      objectReference: {fileID: 327195700}
     - target: {fileID: 2856167386260591859, guid: 30ef320c916469c41b2964273305d924,
         type: 3}
       propertyPath: m_Name

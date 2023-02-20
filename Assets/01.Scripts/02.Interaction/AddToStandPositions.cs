@@ -17,6 +17,7 @@ public class AddToStandPositions : MonoBehaviour
     [SerializeField] private GameObject camRay;
     [SerializeField] private GameObject camShutter;
     [SerializeField] private GameObject teleportAnchorPrefab; // the prefab to spawn and where to teleport during real game time
+    [SerializeField] private FlashScreen flashScreen; // the flash FX used when taking photos
 
     private XRRayInteractor camRayInteractor;
     private XRInteractorLineVisual lineVisual;
@@ -72,10 +73,12 @@ public class AddToStandPositions : MonoBehaviour
 
     /// <summary>
     /// Spawn a Teleport anchor to the hit position of the ray to the ground on release.
+    /// Also call the flash FX before spawning.
     /// </summary>
     /// <param name="position">the hit position between ray and ground</param>
     private void SpawnTeleportAnchor(Vector3 position)
     {
+        flashScreen.Flash();
         cameraSettingsValues.standPositions.Add(position);
         Instantiate(teleportAnchorPrefab, position, Quaternion.identity);
     }
