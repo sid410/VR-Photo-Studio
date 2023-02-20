@@ -7387,6 +7387,12 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &2856167385312586383 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7555467559366815749, guid: 465808c4f0496b8469e8134e999e0cb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5726692703880026762}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5726692703880026762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7399,6 +7405,11 @@ PrefabInstance:
       propertyPath: idolTarget
       value: 
       objectReference: {fileID: 1834880796}
+    - target: {fileID: 2583437607749957665, guid: 465808c4f0496b8469e8134e999e0cb6,
+        type: 3}
+      propertyPath: photoSaver
+      value: 
+      objectReference: {fileID: 7828235255894319788}
     - target: {fileID: 2583437607749957665, guid: 465808c4f0496b8469e8134e999e0cb6,
         type: 3}
       propertyPath: flashScreen
@@ -7476,3 +7487,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 465808c4f0496b8469e8134e999e0cb6, type: 3}
+--- !u!114 &7828235255894319788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2856167385312586383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a00842c783d691449b28cb6bb9ee0cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camDisplay: {fileID: 8400000, guid: e7304a59b3ca57146b53091e02679658, type: 2}

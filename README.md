@@ -22,7 +22,7 @@ Details:
 	- [x] A Shutter To take a Picture
 	- [x] A display To Previzualize the Photo
 	- [x] A Zoom Function
-	- [ ] A Save Function(photos should be saved on a Persistent file on the user's PC)
+	- [x] A Save Function(photos should be saved on a Persistent file on the user's PC)
 	- [ ] A Gallery Function (Photos taken on previous sessions should be loaded upon startup)
 	- [x] A limit of Photos Per Session
 		- [x] After Exceeding the Limit, there should be a fade out to the main Menu

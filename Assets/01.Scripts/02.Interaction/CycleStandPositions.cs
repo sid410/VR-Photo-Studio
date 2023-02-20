@@ -21,11 +21,14 @@ public class CycleStandPositions : MonoBehaviour
     // the idol the user needs to face towards to take photos
     [SerializeField] private GameObject idolTarget;
 
-    // the flash FX used when taking photos
+    // to transition back to main menu after completing one cycle
     [SerializeField] private SceneTransitionManager sceneTransition;
 
     // the flash FX used when taking photos
     [SerializeField] private FlashScreen flashScreen;
+
+    // the script for saving photos
+    [SerializeField] private PhotoSaver photoSaver;
 
     // the ScriptableObject to pass all the data to regarding number of photos and where to stand
     [SerializeField] private CameraSettings cameraSettingsValues;
@@ -88,11 +91,10 @@ public class CycleStandPositions : MonoBehaviour
         /// </remarks>
         if (placeButton.action.WasReleasedThisFrame() && camModelSelected && !flashScreen.IsFlashing)
         {
+            // save a copy of the photo first then flash
+            photoSaver.SavePhoto();
             flashScreen.Flash();
-            //
-            // add here later the take photo function
-            //
-
+            
             // go back to main menu after looping once the predefined photo areas
             if (picsTaken >= numPicsToTake)
             {
