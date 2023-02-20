@@ -25,6 +25,9 @@ public class ZoomCamera : MonoBehaviour
     [SerializeField] private float minFOV = 20.0f;
     [SerializeField] private float zoomSteps = 1.0f;
 
+    // the ScriptableObject to pass all the data to regarding zoom value
+    [SerializeField] private CameraSettings cameraSettingsValues;
+
     /// <remarks>
     /// Only zoom if the 3D camera model is selected.
     /// Do not forget to trigger this in the event of XR Grab Interactable attached in camera model
@@ -33,6 +36,14 @@ public class ZoomCamera : MonoBehaviour
     public bool CamModelSelected
     {
         set { camModelSelected = value; }
+    }
+
+    /// <summary>
+    /// load the saved zoom data from the CameraSettings scriptable object
+    /// </summary>
+    private void Start()
+    {
+        LoadZoom();
     }
 
     private void FixedUpdate()
@@ -57,7 +68,7 @@ public class ZoomCamera : MonoBehaviour
     /// <summary>
     /// Function for changing the value of the Field of view to animate the zoom effect
     /// </summary>
-    /// <param name="zoomIn">set to true if zooming in, set to false if zsooming out</param>
+    /// <param name="zoomIn">set to true if zooming in, set to false if zooming out</param>
     private void ZoomFieldOfView(bool zoomIn)
     {
         float currentView = camObject.fieldOfView;
@@ -65,11 +76,11 @@ public class ZoomCamera : MonoBehaviour
         // clip the field of view
         if (currentView > maxFOV)
         {
-            currentView = maxFOV;
+            currentView = maxFOV - zoomSteps;
         }
         else if (currentView < minFOV)
         {
-            currentView = minFOV;
+            currentView = minFOV + zoomSteps;
         }
         // increment or decrement the FoV to change zoom
         else
@@ -84,8 +95,16 @@ public class ZoomCamera : MonoBehaviour
             }
         }
 
-        // finally update the FoV
-        camObject.fieldOfView = currentView;
+        // finally update the FoV for both the cam object and scriptable object cam settings
+        camObject.fieldOfView = cameraSettingsValues.camZoom = currentView;
+    }
+
+    /// <summary>
+    /// load the saved zoom data from camera settings to the working camera
+    /// </summary>
+    private void LoadZoom()
+    {
+        camObject.fieldOfView = cameraSettingsValues.camZoom;
     }
 
 }
