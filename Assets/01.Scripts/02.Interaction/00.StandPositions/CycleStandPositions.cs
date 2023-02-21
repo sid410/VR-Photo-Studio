@@ -22,6 +22,9 @@ public class CycleStandPositions : MonoBehaviour
     // the idol the user needs to face towards to take photos
     [SerializeField] private GameObject idolTarget;
 
+    // the waving rig, as we need to enable/disable when reorienting the idol
+    [SerializeField] private WavingController wavingRig;
+
     // to transition back to main menu after completing one cycle
     [SerializeField] private SceneTransitionManager sceneTransition;
 
@@ -125,11 +128,16 @@ public class CycleStandPositions : MonoBehaviour
     /// <summary>
     /// Update the transform to new photo area, while looking at the idol,
     /// then increment to move to next photo area.
+    /// Also reorient the Idol, so both can look at each other
     /// </summary>
     private void MoveOriginToNewPhotoArea()
     {
+        // move to the next position
         playerOrigin.transform.position = cyclePositions[picsTaken];
+
+        // orient the player origin and idol look at each other
         playerOrigin.transform.LookAt(idolTarget.transform, Vector3.up);
+        idolTarget.transform.LookAt(playerOrigin.transform, Vector3.up);
 
         // if the 3D camera is more than 1 meter away, move it between the player and idol
         if (Vector3.Distance(gameObject.transform.position, playerOrigin.transform.position) > 1)
@@ -139,4 +147,5 @@ public class CycleStandPositions : MonoBehaviour
 
         picsTaken++;
     }
+
 }

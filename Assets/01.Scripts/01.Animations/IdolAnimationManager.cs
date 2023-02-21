@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using TMPro;
+using UnityEngine.Animations.Rigging;
 
 /// <summary>
 /// The Manager for handling all the idol animations logic, controlled by the dropdown list from menu
 /// </summary>
 public class IdolAnimationManager : MonoBehaviour
 {
+    [SerializeField] private Rig rig;
     [SerializeField] private GameObject idolModel;
     [SerializeField] private PlayableDirector director;
     [SerializeField] private TMP_Dropdown dropList;
@@ -105,25 +107,29 @@ public class IdolAnimationManager : MonoBehaviour
         // play the chosen animation from dropdown exactly once
         if (0 <= index && index < animNames.Count - 2)
         {
-            //IgnoreStoppedEvents();
             isLooping = false;
+
+            StartWavingAnimation(false);
 
             PlayAnimationOfIndex(index);
         }
         // loop through all the animations defined in the list
         else if (index == animNames.Count - 2)
         {
-            //ListenStoppedEvents();
             isLooping = true;
+
+            StartWavingAnimation(false);
 
             LoopAllAnimations();
         }
         // go to idle mode
         else if (index == animNames.Count - 1)
         {
-            //IgnoreStoppedEvents();
             isLooping = false;
             director.Stop();
+
+            // only wave when in idle mode
+            StartWavingAnimation(true);
         }
     }
 
@@ -155,4 +161,19 @@ public class IdolAnimationManager : MonoBehaviour
         director.Play();
     }
 
+    /// <summary>
+    /// Turn On/Off the waving animation by changing the rig weight
+    /// </summary>
+    /// <param name="wavingStart">set to true to start waving animation</param>
+    private void StartWavingAnimation(bool wavingStart)
+    {
+        if (wavingStart)
+        {
+            rig.weight = 1.0f;
+        }
+        else
+        {
+            rig.weight = 0.0f;
+        }
+    }
 }
