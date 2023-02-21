@@ -19,6 +19,7 @@ public class IdolAnimationManager : MonoBehaviour
 
     private Animator idolAnimator;
     private int animLoopCounter;
+    private bool isLooping;
 
     private void Start()
     {
@@ -42,17 +43,23 @@ public class IdolAnimationManager : MonoBehaviour
             animNames.Add(anim.name);
         }
 
-        // finally, add the loop to all option
+        // finally, add the loop and idle to options
         animNames.Add("Cycle All");
+        animNames.Add("Idle");
         dropList.AddOptions(animNames);
-
+        
         // event listener when value of dropdown change
         dropList.onValueChanged.AddListener(delegate
         {
             SetIdolAnimation(dropList.value); 
         });
-        // play the first animation on the list
-        SetIdolAnimation(0);
+
+        // and listen to the stopped events
+        ListenStoppedEvents();
+
+        // play the idle animation, as it is the last
+        SetIdolAnimation(animNames.Count - 1);
+        dropList.value = animNames.Count - 1;
     }
 
     // start listening to animation finished events
@@ -77,17 +84,15 @@ public class IdolAnimationManager : MonoBehaviour
         // director detects stopped event
         if (director == stoppedDirector)
         {
-            // loop through the animation list
-            if (animLoopCounter < animList.Count - 1)
+            if (!isLooping)
             {
-                animLoopCounter++;
-            }
-            else 
-            {
-                animLoopCounter = 0;
+                // set to idle
+                dropList.value = animNames.Count - 1;
+                return;
             }
 
-            LoopAllAnimations(animLoopCounter);
+            // loop through the animation list
+            LoopAllAnimations();
         }
     }
 
@@ -98,32 +103,53 @@ public class IdolAnimationManager : MonoBehaviour
     private void SetIdolAnimation(int index)
     {
         // play the chosen animation from dropdown exactly once
-        if (0 <= index && index < animList.Count)
+        if (0 <= index && index < animNames.Count - 2)
         {
-            IgnoreStoppedEvents();
+            //IgnoreStoppedEvents();
+            isLooping = false;
 
-            director.playableAsset = animList[index];
-            director.RebuildGraph();
-            director.time = 0.0;
-            director.Play();
+            PlayAnimationOfIndex(index);
         }
         // loop through all the animations defined in the list
-        else if (index == animList.Count)
+        else if (index == animNames.Count - 2)
         {
-            ListenStoppedEvents();
+            //ListenStoppedEvents();
+            isLooping = true;
 
-            animLoopCounter = 0;
-            LoopAllAnimations(animLoopCounter);
+            LoopAllAnimations();
+        }
+        // go to idle mode
+        else if (index == animNames.Count - 1)
+        {
+            //IgnoreStoppedEvents();
+            isLooping = false;
+            director.Stop();
         }
     }
 
     /// <summary>
     /// Method for cycling all the inputted animations in the list.
     /// </summary>
-    /// <param name="count">the counter for what animation to play next</param>
-    private void LoopAllAnimations(int count)
+    private void LoopAllAnimations()
     {
-        director.playableAsset = animList[count];
+        if (animLoopCounter < animNames.Count - 2)
+        {
+            PlayAnimationOfIndex(animLoopCounter);
+            animLoopCounter++;
+        }
+        else
+        {
+            animLoopCounter = 0;
+            PlayAnimationOfIndex(animLoopCounter);
+        }
+    }
+
+    /// <summary>
+    /// Play the animation based from the dropdown index
+    /// </summary>
+    private void PlayAnimationOfIndex(int index)
+    {
+        director.playableAsset = animList[index];
         director.RebuildGraph();
         director.time = 0.0;
         director.Play();
