@@ -88,8 +88,9 @@ public class CycleStandPositions : MonoBehaviour
 
         /// <remarks>
         /// trigger only when holding the camera, releasing the button, and the previous flashing animation is finished
+        /// and also the condition when it is in picture taking mode and not in gallery mode.
         /// </remarks>
-        if (placeButton.action.WasReleasedThisFrame() && camModelSelected && !flashScreen.IsFlashing)
+        if (placeButton.action.WasReleasedThisFrame() && camModelSelected && !flashScreen.IsFlashing && photoSaver.isActiveAndEnabled)
         {
             // save a copy of the photo first then flash
             photoSaver.SavePhoto();

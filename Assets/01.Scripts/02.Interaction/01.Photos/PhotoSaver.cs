@@ -9,7 +9,7 @@ using System;
 /// </summary>
 public class PhotoSaver : MonoBehaviour
 {
-    [SerializeField] private RenderTexture camDisplay;
+    [SerializeField] private RenderTexture camDisplayRenderTexture;
     private string saveLocation;
 
     private void Start()
@@ -25,7 +25,7 @@ public class PhotoSaver : MonoBehaviour
     /// </summary>
     public void SavePhoto()
     {
-        Texture2D camTexture = camDisplay.ConvertToTexture2D();
+        Texture2D camTexture = camDisplayRenderTexture.ConvertToTexture2D();
         byte[] bytes = camTexture.EncodeToPNG();
         File.WriteAllBytes(saveLocation + MakeFileNameFromTime(DateTime.UtcNow), bytes);
     }
