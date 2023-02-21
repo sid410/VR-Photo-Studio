@@ -18,12 +18,12 @@ The system should, as a minimum:
 - A simple IK System For The Character
 
 Details:
-- [ ] The camera system should Implement The Following Concepts
+- [x] The camera system should Implement The Following Concepts
 	- [x] A Shutter To take a Picture
 	- [x] A display To Previzualize the Photo
 	- [x] A Zoom Function
 	- [x] A Save Function(photos should be saved on a Persistent file on the user's PC)
-	- [ ] A Gallery Function (Photos taken on previous sessions should be loaded upon startup)
+	- [x] A Gallery Function (Photos taken on previous sessions should be loaded upon startup)
 	- [x] A limit of Photos Per Session
 		- [x] After Exceeding the Limit, there should be a fade out to the main Menu
 	- [x] The Camera Settings(Zoom, Photos per session, Saved Data Location, etc.) should be Editable via Scriptable Objects.

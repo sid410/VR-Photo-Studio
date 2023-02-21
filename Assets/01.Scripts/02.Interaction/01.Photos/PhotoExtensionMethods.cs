@@ -11,7 +11,7 @@ public static class PhotoExtensionMethods
     /// Extension method for converting a RenderTexture to a Texture2D
     /// </summary>
     /// <param name="renderTexture">The input render texture, usually from the Unity cam</param>
-    /// <returns></returns>
+    /// <returns>returns the texture</returns>
     public static Texture2D ConvertToTexture2D(this RenderTexture renderTexture)
     {
         Texture2D tex = new Texture2D(renderTexture.width, renderTexture.height, TextureFormat.RGB24, false);
@@ -29,7 +29,7 @@ public static class PhotoExtensionMethods
     /// Loads an Image file (png) as a Texture2D
     /// </summary>
     /// <param name="filePath">the directory the png file is located</param>
-    /// <returns></returns>
+    /// <returns>returns the texture</returns>
     public static Texture2D LoadPNG(this string filePath)
     {
         Texture2D tex = null;

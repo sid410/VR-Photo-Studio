@@ -45,7 +45,7 @@ public class PhotoManager : MonoBehaviour
     /// </summary>
     private void UpdateInputActions()
     {
-        // buttons that are triggered once
+        // switch between the live camera mode or gallery mode
         if (picturingModeButton.action.triggered)
         {
             SwitchCameraModeToLive(true);
@@ -54,18 +54,21 @@ public class PhotoManager : MonoBehaviour
         {
             SwitchCameraModeToLive(false);
         }
-        if (loadButton.action.triggered)
-        {
-            Debug.Log("refreshing gallery");
-        }
-        if (deleteButton.action.triggered)
-        {
-            Debug.Log("deleting picture");
-        }
 
-        // joystick actions which are delayed for scrolling left/right
+        // only accept these input actions during gallery mode
         if (camDisplayGallery.activeInHierarchy)
         {
+            // buttons that are triggered once
+            if (loadButton.action.triggered)
+            {
+                gallery.LoadPhotosFromMemory();
+            }
+            if (deleteButton.action.triggered)
+            {
+                gallery.RemovePhotoFromMemory();
+            }
+
+            // joystick actions which are delayed for scrolling left/right
             if (browseButton.action.ReadValue<Vector2>().x > 0.8f)
             {
                 gallery.ViewNextOrPreviousPhoto(true);

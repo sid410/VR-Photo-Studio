@@ -43,7 +43,6 @@ public class AddToStandPositions : MonoBehaviour
         camRayInteractor = camRay.GetComponent<XRRayInteractor>();
         lineVisual = camRay.GetComponent<XRInteractorLineVisual>();
 
-        // load the existing teleport anchors stored at the CameraSettings ScriptableObject at start
         LoadTeleportAnchors();
     }
 
@@ -85,6 +84,9 @@ public class AddToStandPositions : MonoBehaviour
         Instantiate(teleportAnchorPrefab, position, Quaternion.identity);
     }
 
+    /// <summary>
+    /// load the existing teleport anchors stored at the CameraSettings ScriptableObject at start
+    /// </summary>
     private void LoadTeleportAnchors()
     {
         foreach (Vector3 pos in cameraSettingsValues.standPositions)
