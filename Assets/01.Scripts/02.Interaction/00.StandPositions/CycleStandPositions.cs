@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Cycle through the pre-defined photo areas where the player can take pictures of the idol.
@@ -50,7 +51,19 @@ public class CycleStandPositions : MonoBehaviour
 
     private void Start()
     {
+        /// <remarks>
+        /// When there are no stand positions defined, immediately go back to main scene
+        /// This is without doing the fading animation
+        /// </remarks>
+        if (cameraSettingsValues.standPositions.Count == 0)
+        {
+            SceneManager.LoadScene(0);
+            enabled = false;
+            return;
+        }
+
         // choose whichever is lower from the max photos set vs the number of anchors set
+        // in other words, clip how much the player can take in one session
         if (cameraSettingsValues.maxPhotos <= cameraSettingsValues.standPositions.Count)
         {
             numPicsToTake = cameraSettingsValues.maxPhotos;

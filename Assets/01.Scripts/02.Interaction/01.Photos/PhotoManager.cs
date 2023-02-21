@@ -48,12 +48,10 @@ public class PhotoManager : MonoBehaviour
         // buttons that are triggered once
         if (picturingModeButton.action.triggered)
         {
-            Debug.Log("taking picture mode");
             SwitchCameraModeToLive(true);
         }
         if (galleryModeButton.action.triggered)
         {
-            Debug.Log("viewing gallery mode");
             SwitchCameraModeToLive(false);
         }
         if (loadButton.action.triggered)
@@ -70,16 +68,12 @@ public class PhotoManager : MonoBehaviour
         {
             if (browseButton.action.ReadValue<Vector2>().x > 0.8f)
             {
-                Debug.Log("browsing right");
                 gallery.ViewNextOrPreviousPhoto(true);
-
                 IgnoreInputActionForSeconds(browseButton.action, 1);
             }
             else if (browseButton.action.ReadValue<Vector2>().x < -0.8f)
             {
-                Debug.Log("browsing left");
                 gallery.ViewNextOrPreviousPhoto(false);
-
                 IgnoreInputActionForSeconds(browseButton.action, 1);
             }
         }
