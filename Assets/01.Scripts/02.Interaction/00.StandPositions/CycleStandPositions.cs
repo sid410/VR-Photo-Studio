@@ -118,6 +118,12 @@ public class CycleStandPositions : MonoBehaviour
         playerOrigin.transform.position = cyclePositions[picsTaken];
         playerOrigin.transform.LookAt(idolTarget.transform, Vector3.up);
 
+        // if the 3D camera is more than 1 meter away, move it between the player and idol
+        if (Vector3.Distance(gameObject.transform.position, playerOrigin.transform.position) > 1)
+        {
+            gameObject.transform.position = (playerOrigin.transform.position + idolTarget.transform.position) / 2;
+        }
+
         picsTaken++;
     }
 }
