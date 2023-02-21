@@ -69,12 +69,9 @@ public class PhotoGallery : MonoBehaviour
         {
             return;
         }
-        // check first if the file exists in memory before deleting
-        if (File.Exists(savedPhotosList[currPhoto]))
-        {
-            File.Delete(savedPhotosList[currPhoto]);
-            LoadPhotosFromMemory();
-        }
+
+        File.Delete(savedPhotosList[currPhoto]);
+        LoadPhotosFromMemory();
     }
 
     /// <summary>
