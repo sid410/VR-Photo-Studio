@@ -60,7 +60,6 @@ public class IdolAnimationManager : MonoBehaviour
         ListenStoppedEvents();
 
         // play the idle animation, as it is the last
-        SetIdolAnimation(animNames.Count - 1);
         dropList.value = animNames.Count - 1;
     }
 

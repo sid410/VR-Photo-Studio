@@ -22,7 +22,7 @@ public class CycleStandPositions : MonoBehaviour
     // the idol the user needs to face towards to take photos
     [SerializeField] private GameObject idolTarget;
 
-    // the waving rig, as we need to enable/disable when reorienting the idol
+    // the waving rig, as we need to re-initialize when reorienting the idol
     [SerializeField] private WavingController wavingRig;
 
     // to transition back to main menu after completing one cycle
@@ -138,6 +138,7 @@ public class CycleStandPositions : MonoBehaviour
         // orient the player origin and idol look at each other
         playerOrigin.transform.LookAt(idolTarget.transform, Vector3.up);
         idolTarget.transform.LookAt(playerOrigin.transform, Vector3.up);
+        wavingRig.InitializeWavingVariables();
 
         // if the 3D camera is more than 1 meter away, move it between the player and idol
         if (Vector3.Distance(gameObject.transform.position, playerOrigin.transform.position) > 1)
