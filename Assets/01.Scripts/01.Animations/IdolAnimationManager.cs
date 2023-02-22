@@ -12,6 +12,7 @@ using UnityEngine.Animations.Rigging;
 public class IdolAnimationManager : MonoBehaviour
 {
     [SerializeField] private TwoBoneIKConstraint wavingRig;
+    [SerializeField] private MultiAimConstraint hipRig, bodyRig, headRig;
     [SerializeField] private GameObject idolModel;
     [SerializeField] private PlayableDirector director;
     [SerializeField] private TMP_Dropdown dropList;
@@ -154,10 +155,16 @@ public class IdolAnimationManager : MonoBehaviour
         if (wavingStart)
         {
             wavingRig.weight = 1.0f;
+            hipRig.weight = 1.0f;
+            bodyRig.weight = 1.0f;
+            headRig.weight = 1.0f;
         }
         else
         {
             wavingRig.weight = 0.0f;
+            hipRig.weight = 0.0f;
+            bodyRig.weight = 0.0f;
+            headRig.weight = 0.0f;
         }
     }
 }

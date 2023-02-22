@@ -5653,6 +5653,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wavingRig: {fileID: 10820882}
+  hipRig: {fileID: 727509124}
+  bodyRig: {fileID: 118736412}
+  headRig: {fileID: 57066718}
   idolModel: {fileID: 2127017494515838218}
   director: {fileID: 1441002531}
   dropList: {fileID: 921112253}
@@ -5661,6 +5664,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 30f308f00c363004e890392ad7a8855b, type: 2}
   - {fileID: 11400000, guid: c99fd477747e0714ca82c985277095a7, type: 2}
   - {fileID: 11400000, guid: 48f7ddb87bce6aa409ed429df3f9869c, type: 2}
+  - {fileID: 11400000, guid: 12d8181cc2e164447b765508d9274198, type: 2}
 --- !u!1 &1590881689
 GameObject:
   m_ObjectHideFlags: 0
