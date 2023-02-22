@@ -110,10 +110,6 @@ public class IdolAnimationManager : MonoBehaviour
     /// <param name="index">take the index of the value of the dropdown list</param>
     private void SetIdolAnimation(int index)
     {
-        //animLoopCounter = index;
-
-        Debug.Log(index);
-
         // play the corresponding animation
         if (0 <= index && index < animNames.Count - 2)
         {
