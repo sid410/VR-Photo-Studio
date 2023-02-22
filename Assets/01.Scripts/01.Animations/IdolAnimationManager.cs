@@ -53,13 +53,16 @@ public class IdolAnimationManager : MonoBehaviour
         // event listener when value of dropdown change
         dropList.onValueChanged.AddListener(delegate
         {
-            SetIdolAnimation(dropList.value); 
+            // always set loop to false, as this value will be changed when choosing Cycle All option
+            isLooping = false;
+            // set to the chosen animation
+            SetIdolAnimation(dropList.value);
         });
-
+        
         // and listen to the stopped events
         ListenStoppedEvents();
 
-        // play the idle animation, as it is the last
+        // set the default to Idle animation
         dropList.value = animNames.Count - 1;
     }
 
@@ -82,18 +85,22 @@ public class IdolAnimationManager : MonoBehaviour
     /// <param name="stoppedDirector">for checking the stopped animation</param>
     private void OnPlayableDirectorStopped(PlayableDirector stoppedDirector)
     {
-        // director detects stopped event
+        // director detects stopped event and we choose Cycle All animations from dropdown
         if (director == stoppedDirector)
         {
-            if (!isLooping)
+            if (isLooping)
             {
-                // set to idle
-                dropList.value = animNames.Count - 1;
-                return;
+                /// <remarks>
+                /// Play the next animation
+                /// This will automatically loop back to first animation if current animation is the last one
+                /// </remarks>
+                SetIdolAnimation(animLoopCounter++);
             }
-
-            // loop through the animation list
-            LoopAllAnimations();
+            else // go back to Idle mode
+            {
+                // this fires an event, so the SetIdolAnimation is called there
+                dropList.value = animNames.Count - 1;
+            }
         }
     }
 
@@ -103,49 +110,31 @@ public class IdolAnimationManager : MonoBehaviour
     /// <param name="index">take the index of the value of the dropdown list</param>
     private void SetIdolAnimation(int index)
     {
-        // play the chosen animation from dropdown exactly once
+        //animLoopCounter = index;
+
+        Debug.Log(index);
+
+        // play the corresponding animation
         if (0 <= index && index < animNames.Count - 2)
         {
-            isLooping = false;
-
-            StartWavingAnimation(false);
-
             PlayAnimationOfIndex(index);
+            StartWavingAnimation(false);
         }
-        // loop through all the animations defined in the list
+        // cycle through all the animations starting from the very top
         else if (index == animNames.Count - 2)
         {
             isLooping = true;
 
+            // because we already start playing the animation 0, set counter to next
+            animLoopCounter = 1;
+            PlayAnimationOfIndex(0);
             StartWavingAnimation(false);
-
-            LoopAllAnimations();
         }
-        // go to idle mode
-        else if (index == animNames.Count - 1)
+        else // if idle 
         {
-            isLooping = false;
+            // force stop the current animation and start waving again
             director.Stop();
-
-            // only wave when in idle mode
             StartWavingAnimation(true);
-        }
-    }
-
-    /// <summary>
-    /// Method for cycling all the inputted animations in the list.
-    /// </summary>
-    private void LoopAllAnimations()
-    {
-        if (animLoopCounter < animNames.Count - 2)
-        {
-            PlayAnimationOfIndex(animLoopCounter);
-            animLoopCounter++;
-        }
-        else
-        {
-            animLoopCounter = 0;
-            PlayAnimationOfIndex(animLoopCounter);
         }
     }
 
