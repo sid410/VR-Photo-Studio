@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 using TMPro;
+using UnityEngine.Animations.Rigging;
 
 /// <summary>
 /// The Manager for handling all the idol animations logic, controlled by the dropdown list from menu
 /// </summary>
 public class IdolAnimationManager : MonoBehaviour
 {
+    [SerializeField] private TwoBoneIKConstraint wavingRig;
     [SerializeField] private GameObject idolModel;
     [SerializeField] private PlayableDirector director;
     [SerializeField] private TMP_Dropdown dropList;
@@ -19,6 +21,7 @@ public class IdolAnimationManager : MonoBehaviour
 
     private Animator idolAnimator;
     private int animLoopCounter;
+    private bool isLooping;
 
     private void Start()
     {
@@ -42,17 +45,22 @@ public class IdolAnimationManager : MonoBehaviour
             animNames.Add(anim.name);
         }
 
-        // finally, add the loop to all option
+        // finally, add the loop and idle to options
         animNames.Add("Cycle All");
+        animNames.Add("Idle");
         dropList.AddOptions(animNames);
-
+        
         // event listener when value of dropdown change
         dropList.onValueChanged.AddListener(delegate
         {
             SetIdolAnimation(dropList.value); 
         });
-        // play the first animation on the list
-        SetIdolAnimation(0);
+
+        // and listen to the stopped events
+        ListenStoppedEvents();
+
+        // play the idle animation, as it is the last
+        dropList.value = animNames.Count - 1;
     }
 
     // start listening to animation finished events
@@ -77,17 +85,15 @@ public class IdolAnimationManager : MonoBehaviour
         // director detects stopped event
         if (director == stoppedDirector)
         {
-            // loop through the animation list
-            if (animLoopCounter < animList.Count - 1)
+            if (!isLooping)
             {
-                animLoopCounter++;
-            }
-            else 
-            {
-                animLoopCounter = 0;
+                // set to idle
+                dropList.value = animNames.Count - 1;
+                return;
             }
 
-            LoopAllAnimations(animLoopCounter);
+            // loop through the animation list
+            LoopAllAnimations();
         }
     }
 
@@ -98,35 +104,75 @@ public class IdolAnimationManager : MonoBehaviour
     private void SetIdolAnimation(int index)
     {
         // play the chosen animation from dropdown exactly once
-        if (0 <= index && index < animList.Count)
+        if (0 <= index && index < animNames.Count - 2)
         {
-            IgnoreStoppedEvents();
+            isLooping = false;
 
-            director.playableAsset = animList[index];
-            director.RebuildGraph();
-            director.time = 0.0;
-            director.Play();
+            StartWavingAnimation(false);
+
+            PlayAnimationOfIndex(index);
         }
         // loop through all the animations defined in the list
-        else if (index == animList.Count)
+        else if (index == animNames.Count - 2)
         {
-            ListenStoppedEvents();
+            isLooping = true;
 
-            animLoopCounter = 0;
-            LoopAllAnimations(animLoopCounter);
+            StartWavingAnimation(false);
+
+            LoopAllAnimations();
+        }
+        // go to idle mode
+        else if (index == animNames.Count - 1)
+        {
+            isLooping = false;
+            director.Stop();
+
+            // only wave when in idle mode
+            StartWavingAnimation(true);
         }
     }
 
     /// <summary>
     /// Method for cycling all the inputted animations in the list.
     /// </summary>
-    /// <param name="count">the counter for what animation to play next</param>
-    private void LoopAllAnimations(int count)
+    private void LoopAllAnimations()
     {
-        director.playableAsset = animList[count];
+        if (animLoopCounter < animNames.Count - 2)
+        {
+            PlayAnimationOfIndex(animLoopCounter);
+            animLoopCounter++;
+        }
+        else
+        {
+            animLoopCounter = 0;
+            PlayAnimationOfIndex(animLoopCounter);
+        }
+    }
+
+    /// <summary>
+    /// Play the animation based from the dropdown index
+    /// </summary>
+    private void PlayAnimationOfIndex(int index)
+    {
+        director.playableAsset = animList[index];
         director.RebuildGraph();
         director.time = 0.0;
         director.Play();
     }
 
+    /// <summary>
+    /// Turn On/Off the waving animation by changing the rig weight
+    /// </summary>
+    /// <param name="wavingStart">set to true to start waving animation</param>
+    private void StartWavingAnimation(bool wavingStart)
+    {
+        if (wavingStart)
+        {
+            wavingRig.weight = 1.0f;
+        }
+        else
+        {
+            wavingRig.weight = 0.0f;
+        }
+    }
 }

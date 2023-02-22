@@ -34,13 +34,13 @@ Details:
 	- [x] After Taking the photo, the player should be teleported to the next position but oriented toward the Idol.
 	- [x] The system should be flexible enough for a designer to create new Points where the player could stand.
   
-- [ ] The VR Idol should have at least four different Animations(Timeline Controlled) + Waving and looking toward the player.
-	- [ ] Through the VR Menu should be able To select 1 out of 3 modes
+- [x] The VR Idol should have at least four different Animations(Timeline Controlled) + Waving and looking toward the player.
+	- [x] Through the VR Menu should be able To select 1 out of 3 modes
 		- [x] Single Animation Mode
 			- [x] Only One animation should be Played
 		- [x] All Animations Looped
 			- [x] The 4+ animations should be played One after the other and Loop to the first one upon completion.
-		- [ ] Waving Mode
-			- [ ] The Character should Be in Idle mode while Looking at the player and Waving(Use an Ik Controller for this)
+		- [x] Waving Mode
+			- [x] The Character should Be in Idle mode while Looking at the player and Waving(Use an Ik Controller for this)
       
 - [x] The experience should have a beginning and an end.
