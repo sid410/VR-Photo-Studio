@@ -44,3 +44,7 @@ Details:
 			- [x] The Character should Be in Idle mode while Looking at the player and Waving(Use an Ik Controller for this)
       
 - [x] The experience should have a beginning and an end.
+
+## Gameplay and Controls explanation
+
+(*To do) Will add here later detailed description about the gameplay plus the input controls that are possible to do inside this VR experience.
