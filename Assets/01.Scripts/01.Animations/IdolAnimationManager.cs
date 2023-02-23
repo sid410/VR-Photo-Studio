@@ -185,7 +185,10 @@ public class IdolAnimationManager : MonoBehaviour
         }
         else 
         {
-            danceAudio.Stop();
+            if (danceAudio != null)
+            {
+                danceAudio.Stop();
+            }
         }
     }
 }
