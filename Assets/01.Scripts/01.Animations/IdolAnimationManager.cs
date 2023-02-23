@@ -18,6 +18,9 @@ public class IdolAnimationManager : MonoBehaviour
     [SerializeField] private TMP_Dropdown dropList;
     [SerializeField] private List<TimelineAsset> animList = new List<TimelineAsset>();
 
+    [SerializeField] private string danceAnimationName;
+    [SerializeField] private AudioSource danceAudio;
+
     private List<string> animNames = new List<string>();
 
     private Animator idolAnimator;
@@ -58,6 +61,8 @@ public class IdolAnimationManager : MonoBehaviour
             isLooping = false;
             // set to the chosen animation
             SetIdolAnimation(dropList.value);
+            // and enable the dance music if they choose the option of dancing
+            SetDanceMusic(dropList.options[dropList.value].text);
         });
         
         // and listen to the stopped events
@@ -129,9 +134,14 @@ public class IdolAnimationManager : MonoBehaviour
         }
         else // if idle 
         {
-            // force stop the current animation and start waving again
+            // force stop the current animation, start waving again, and reset offset transforms caused by animations
             director.Stop();
             StartWavingAnimation(true);
+            if (idolModel != null)
+            {
+                idolModel.transform.position = Vector3.zero;
+                idolModel.transform.rotation = Quaternion.identity;
+            }
         }
     }
 
@@ -165,6 +175,25 @@ public class IdolAnimationManager : MonoBehaviour
             hipRig.weight = 0.0f;
             bodyRig.weight = 0.0f;
             headRig.weight = 0.0f;
+        }
+    }
+
+    /// <summary>
+    /// Plays the dance music when the dance option is chosen
+    /// </summary>
+    /// <param name="dropListName">the filename of the dance animation (without the extension)</param>
+    private void SetDanceMusic(string dropListName)
+    {
+        if (dropListName == danceAnimationName)
+        {
+            danceAudio.Play();
+        }
+        else 
+        {
+            if (danceAudio != null)
+            {
+                danceAudio.Stop();
+            }
         }
     }
 }

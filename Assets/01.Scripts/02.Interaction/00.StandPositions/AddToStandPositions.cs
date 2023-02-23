@@ -53,6 +53,11 @@ public class AddToStandPositions : MonoBehaviour
         /// </remarks>
         if (placeButton.action.WasReleasedThisFrame() && hitPosition != Vector3.zero)
         {
+            // check if the spawn area is viable
+            if (Vector3.Distance(hitPosition, Vector3.zero) < 0.5f || hitPosition.y > 0.01f)
+            {
+                return;
+            }
             SpawnTeleportAnchor(hitPosition);
             hitPosition = Vector3.zero;
         }
