@@ -17,12 +17,6 @@ public class ToggleMenu : MonoBehaviour
     /// </remarks>
     public InputActionProperty showButton;
 
-    private void Start()
-    {
-        // initially turn off the canvas
-        canvas.SetActive(false);
-    }
-
     private void Update()
     {
         // toggle the menu on/off
