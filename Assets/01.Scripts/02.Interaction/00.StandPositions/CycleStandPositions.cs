@@ -144,7 +144,7 @@ public class CycleStandPositions : MonoBehaviour
         // if the 3D camera is more than 1 meter away, move it between the player and idol
         if (Vector3.Distance(gameObject.transform.position, playerOrigin.transform.position) > 1)
         {
-            gameObject.transform.position = (playerOrigin.transform.position + idolTarget.transform.position) / 2;
+            RespawnCameraNearMe();
         }
 
         picsTaken++;
@@ -165,5 +165,15 @@ public class CycleStandPositions : MonoBehaviour
             idolTarget.transform.LookAt(playerOrigin.transform, Vector3.up);
             wavingRig.InitializeWavingVariables();
         }
+    }
+
+    /// <summary>
+    /// Respawn the camera between the player and the idol
+    /// Called when a button event is raised in game menu.
+    /// </summary>
+    public void RespawnCameraNearMe()
+    {
+        gameObject.transform.position = ((playerOrigin.transform.position + idolTarget.transform.position) / 2) + new Vector3(0, 0.5f, 0);
+        gameObject.transform.LookAt(idolTarget.transform, Vector3.up);
     }
 }
