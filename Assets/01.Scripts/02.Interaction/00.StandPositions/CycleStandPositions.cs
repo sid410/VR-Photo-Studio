@@ -135,18 +135,45 @@ public class CycleStandPositions : MonoBehaviour
         // move to the next position
         playerOrigin.transform.position = cyclePositions[picsTaken];
 
-        // orient the player origin and idol look at each other
-        playerOrigin.transform.LookAt(idolTarget.transform, Vector3.up);
-        idolTarget.transform.LookAt(playerOrigin.transform, Vector3.up);
-        wavingRig.InitializeWavingVariables();
+        // only reorient the idol if she needs to rotate too much
+        ReorientIdolIfAngleGreaterThan(90);
 
+        // orient the player origin towards the idol
+        playerOrigin.transform.LookAt(idolTarget.transform, Vector3.up);
+        
         // if the 3D camera is more than 1 meter away, move it between the player and idol
         if (Vector3.Distance(gameObject.transform.position, playerOrigin.transform.position) > 1)
         {
-            gameObject.transform.position = (playerOrigin.transform.position + idolTarget.transform.position) / 2;
+            RespawnCameraNearMe();
         }
 
         picsTaken++;
     }
 
+    /// <summary>
+    /// Reorient the forward direction of the idol if the next position of the player requires the idol to tilt too much
+    /// </summary>
+    /// <param name="angle">the angle difference between player new position and idol facing forward</param>
+    private void ReorientIdolIfAngleGreaterThan(float angle)
+    {
+        Vector3 dir = playerOrigin.transform.position - idolTarget.transform.position;
+        dir = new Vector3(dir.x, 0, dir.z);
+
+        // if the angle difference is too big, reorient the idol
+        if (angle < Vector3.Angle(dir, idolTarget.transform.forward))
+        {
+            idolTarget.transform.LookAt(playerOrigin.transform, Vector3.up);
+            wavingRig.InitializeWavingVariables();
+        }
+    }
+
+    /// <summary>
+    /// Respawn the camera between the player and the idol
+    /// Called when a button event is raised in game menu.
+    /// </summary>
+    public void RespawnCameraNearMe()
+    {
+        gameObject.transform.position = ((playerOrigin.transform.position + idolTarget.transform.position) / 2) + new Vector3(0, 0.5f, 0);
+        gameObject.transform.LookAt(idolTarget.transform, Vector3.up);
+    }
 }
