@@ -16043,7 +16043,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2191\nZoom\n\u2193"
+  m_text: Zoom
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6047fc86334c51c42aaf3854bd1799d3, type: 2}
   m_sharedMaterial: {fileID: -4605568650617701435, guid: 6047fc86334c51c42aaf3854bd1799d3,
@@ -16130,7 +16130,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.3, y: -34.5}
+  m_AnchoredPosition: {x: 29.3, y: -39.9}
   m_SizeDelta: {x: 384.7, y: 108.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &4502787261686115654
@@ -23451,7 +23451,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u2190Browse\u2192"
+  m_text: Browse
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6047fc86334c51c42aaf3854bd1799d3, type: 2}
   m_sharedMaterial: {fileID: -4605568650617701435, guid: 6047fc86334c51c42aaf3854bd1799d3,
