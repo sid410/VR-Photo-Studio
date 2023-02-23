@@ -4710,6 +4710,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2311538567644995345, guid: 30ef320c916469c41b2964273305d924,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 48
+      objectReference: {fileID: 0}
     - target: {fileID: 2311538568589401795, guid: 30ef320c916469c41b2964273305d924,
         type: 3}
       propertyPath: ignoreArea

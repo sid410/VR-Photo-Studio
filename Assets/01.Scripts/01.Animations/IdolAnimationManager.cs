@@ -134,9 +134,14 @@ public class IdolAnimationManager : MonoBehaviour
         }
         else // if idle 
         {
-            // force stop the current animation and start waving again
+            // force stop the current animation, start waving again, and reset offset transforms caused by animations
             director.Stop();
             StartWavingAnimation(true);
+            if (idolModel != null)
+            {
+                idolModel.transform.position = Vector3.zero;
+                idolModel.transform.rotation = Quaternion.identity;
+            }
         }
     }
 

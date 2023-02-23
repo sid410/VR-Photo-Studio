@@ -49,10 +49,15 @@ public class AddToStandPositions : MonoBehaviour
     private void Update()
     {
         /// <remarks>
-        /// Spawn a teleport anchor once when the shoot button is released, and if outside the restricted area at center
+        /// Spawn a teleport anchor once when the shoot button is released
         /// </remarks>
-        if (placeButton.action.WasReleasedThisFrame() && hitPosition != Vector3.zero && Vector3.Distance(hitPosition, Vector3.zero) > 0.5f)
+        if (placeButton.action.WasReleasedThisFrame() && hitPosition != Vector3.zero)
         {
+            // check if the spawn area is viable
+            if (Vector3.Distance(hitPosition, Vector3.zero) < 0.5f || hitPosition.y > 0.01f)
+            {
+                return;
+            }
             SpawnTeleportAnchor(hitPosition);
             hitPosition = Vector3.zero;
         }
