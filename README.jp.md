@@ -37,11 +37,11 @@
 
 ![Place to Teleport in Studio Room](/img/Studio_2.png)
 
-3. メニュー右側のドロップダウンリストから好きな項目を選択して、バーチャルアイドルのアニメーションを変更してください。選択はDanceが大勧め！
+3. Menu右側のドロップダウンリストから好きな項目を選択して、バーチャルアイドルのアニメーションを変更してください。選択はDanceが大勧め！
 
 ![Change the Animation](/img/Studio_3.jpg)
 
-4. 今までに撮った写真を見たい場合は、右手のAボタンでGalleryモードに切り替えることができます。左手のYボタンで写真をリロードし、Browseスティックの左右の操作で閲覧できます。
+4. 今までに撮った写真を見たい場合は、右手のAボタンでGalleryモードに切り替えることができます。左手のYボタンで写真をReloadし、Browseスティックの左右の操作で閲覧できます。
 
 ![Switch to Gallery Mode](/img/Studio_4.gif)
 
@@ -53,7 +53,7 @@
 
 ![Switch to Shutter Mode](/img/Studio_6.gif)
 
-7. Menuボタンを押すと、メニュー画面を表示するかどうかを切り替えることもできます。
+7. Menuボタンを押すと、Menu画面を表示するかどうかを切り替えることもできます。
 
 ![Toggle UI](/img/Studio_7.gif)
 
