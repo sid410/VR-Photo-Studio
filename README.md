@@ -1,7 +1,7 @@
 # Tutorial
 
-[![en](https://img.shields.io/badge/lang-en-red.svg)]()
-[![jp](https://img.shields.io/badge/lang-jp-yellow.svg)]()
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/sid410/VR-Photo-Studio/blob/Tutorial/README.md)
+[![jp](https://img.shields.io/badge/lang-jp-yellow.svg)](https://github.com/sid410/VR-Photo-Studio/blob/Tutorial/README.jp.md)
 
 ---
 ### Main Menu Room:
@@ -60,5 +60,8 @@
 
 ## Demo Movie
 
+###### Music © 「Be Crazy For Me」by EIKO starring 96猫
+
+https://user-images.githubusercontent.com/39384021/221155723-6cd0a951-6615-445a-96d6-5d9de55c3d3a.mp4
 
 [HD link here](https://www.dropbox.com/s/1r0522ys9s0iu5u/VRPS_demo.mp4?dl=0)
