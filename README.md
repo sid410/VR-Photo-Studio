@@ -45,6 +45,6 @@ Details:
       
 - [x] The experience should have a beginning and an end.
 
-## Gameplay and Controls explanation
+## Gameplay and Controls tutorial
 
-(*To do) Will add here later detailed description about the gameplay plus the input controls that are possible to do inside this VR experience.
+Visit the tutorials page either in [English](https://github.com/sid410/VR-Photo-Studio/blob/Tutorial/README.md) or in [日本語](https://github.com/sid410/VR-Photo-Studio/blob/Tutorial/README.jp.md)
