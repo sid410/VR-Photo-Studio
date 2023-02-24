@@ -4544,12 +4544,12 @@ PrefabInstance:
     - target: {fileID: 4502787261865219868, guid: 2104de6be2b40d74d853ac625c9a65d6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -39.5
+      value: -33
       objectReference: {fileID: 0}
     - target: {fileID: 4502787261865219869, guid: 2104de6be2b40d74d853ac625c9a65d6,
         type: 3}
       propertyPath: m_text
-      value: Zoom
+      value: "\u2191\nZoom\n\u2193"
       objectReference: {fileID: 0}
     - target: {fileID: 4502787261865219869, guid: 2104de6be2b40d74d853ac625c9a65d6,
         type: 3}
@@ -4752,7 +4752,7 @@ PrefabInstance:
     - target: {fileID: 8684847339595521234, guid: 715a62d6efa35dd4fae30c1959db583e,
         type: 3}
       propertyPath: m_text
-      value: Browse
+      value: "\u2190Browse\u2192"
       objectReference: {fileID: 0}
     - target: {fileID: 8684847339595521234, guid: 715a62d6efa35dd4fae30c1959db583e,
         type: 3}
